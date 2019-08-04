@@ -43,7 +43,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // 使用profiles
-app.use("/api/profiles", profiles)
+app.use("/api/profile", profiles)
 
 const port = process.env.PORT || 5000
 

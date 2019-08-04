@@ -12,7 +12,7 @@ router.get("/test", (req, res) => {
     res.json({msg: "profiles works"})
 })
 
-// $route POST api/profiles/add
+// $route POST api/profile/add
 // @desc 配置-创建信息接口
 // @access Private
 router.post("/add", passport.authenticate("jwt", {session: false}), (req, res) => {
@@ -30,7 +30,7 @@ router.post("/add", passport.authenticate("jwt", {session: false}), (req, res) =
     })
 })
 
-// $route GET api/profiles
+// $route GET api/profile
 // @desc 配置- 获取（所有）信息接口
 // @access Private
 router.get("/", passport.authenticate('jwt', { session: false}), (req, res) => {
@@ -44,7 +44,7 @@ router.get("/", passport.authenticate('jwt', { session: false}), (req, res) => {
     .catch(err => res.status(404).json(err))
 })
 
-// $route GET api/profiles/:id
+// $route GET api/profile/:id
 // @desc 配置- 获取（单个）信息接口
 // @access Private
 router.get("/:id", passport.authenticate('jwt', { session: false}), (req, res) => {
@@ -58,7 +58,7 @@ router.get("/:id", passport.authenticate('jwt', { session: false}), (req, res) =
     .catch(err => res.status(404).json(err))
 })
 
-// $route POST api/profiles/edit:id
+// $route POST api/profile/edit:id
 // @desc 配置-编辑信息接口
 // @access Private
 router.post("/edit/:id", passport.authenticate("jwt", {session: false}), (req, res) => {
@@ -78,7 +78,7 @@ router.post("/edit/:id", passport.authenticate("jwt", {session: false}), (req, r
     ).then(profile => res.json(profile))
 })
 
-// $route POST api/profiles/delete/:id
+// $route POST api/profile/delete/:id
 // @desc 配置-删除信息接口
 // @access Private
 router.delete("/delete/:id", passport.authenticate("jwt", {session: false}), (req, res) => {
