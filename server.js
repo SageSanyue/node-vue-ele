@@ -7,7 +7,7 @@ const app = express()
 
 // 引入 users.js
 const users = require("./routes/api/users")
-// 引入配置信息 Profile.js
+// 引入配置信息 profile.js
 const profiles = require("./routes/api/profiles")
 
 // DB config

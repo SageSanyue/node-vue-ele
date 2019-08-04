@@ -28,7 +28,7 @@ router.post("/register", (req, res) => {
                 return res.status(400).json("邮箱已被注册！")
             } else {
                 const avatar = gravatar.url(req.body.email, {s: '200', r: 'pg', d: 'mm'})
-                console.log(avatar, 'avator')
+                console.log(avatar, 'avatar')
                 // mm会有一个默认头像
                 const newUser = new User({
                     name: req.body.name,
@@ -72,7 +72,7 @@ router.post("/login", (req, res) => {
                           const rule = {
                               id: user.id,
                               name: user.name,
-                              avator: user.avator,
+                              avatar: user.avatar,
                               identity: user.identity
                             }
                           jwt.sign(rule, keys.secretOrPrivateKey, {expiresIn: 3600}, (err, token) => {
